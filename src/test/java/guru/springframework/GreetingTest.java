@@ -1,12 +1,22 @@
 package guru.springframework;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class GreetingTest {
 
+    private Greeting greeting;
+
+    @BeforeEach
+    void setUp() {
+        System.out.println("In Before Each....");
+
+        greeting = new Greeting();
+    }
+
     @Test
     void helloWorld() {
-        Greeting greeting = new Greeting();
+        greeting = new Greeting();
 
         System.out.println(greeting.helloWorld());
 
@@ -14,7 +24,7 @@ class GreetingTest {
 
     @Test
     void helloWorld1() {
-        Greeting greeting = new Greeting();
+        greeting = new Greeting();
 
         System.out.println(greeting.helloWorld("John"));
     }
